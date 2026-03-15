@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PalconAI — Building Intelligent Tools for Everyday India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --midnight: #0A0F1E;
+      --navy: #111827;
+      --accent: #22C55E;
+      --accent-dim: #16A34A;
+      --accent-glow: rgba(34,197,94,0.15);
+      --text: #F1F5F9;
+      --text-muted: #94A3B8;
+      --border: rgba(255,255,255,0.08);
+      --card-bg: rgba(255,255,255,0.04);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--midnight);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(12px);
+      background: rgba(10,15,30,0.8);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 32px; height: 32px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .nav-logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #000;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 9px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--accent-dim); }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(34,197,94,0.3);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-badge span {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 7vw, 80px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 24px;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .hero h1 em { font-style: normal; color: var(--accent); }
+
+    .hero p {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--text-muted);
+      max-width: 560px;
+      font-weight: 300;
+      margin-bottom: 48px;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn-primary:hover { transform: translateY(-2px); background: var(--accent-dim); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-2px); }
+
+    .hero-orb {
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(34,197,94,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 100px 24px;
+    }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 540px;
+      font-weight: 300;
+      margin-bottom: 64px;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      transition: border-color 0.3s;
+    }
+
+    .product-card:hover { border-color: rgba(34,197,94,0.3); }
+
+    .product-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(34,197,94,0.2);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    .product-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .product-card p {
+      font-size: 16px;
+      color: var(--text-muted);
+      font-weight: 300;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .product-features {
+      list-style: none;
+      margin-bottom: 36px;
+    }
+
+    .product-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+      padding: 6px 0;
+    }
+
+    .product-features li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .product-visual {
+      background: linear-gradient(135deg, rgba(34,197,94,0.1) 0%, rgba(34,197,94,0.03) 100%);
+      border: 1px solid rgba(34,197,94,0.15);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      font-size: 80px;
+      line-height: 1;
+    }
+
+    .product-visual-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 16px;
+      font-weight: 400;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .value-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .value-card:hover { border-color: rgba(34,197,94,0.2); transform: translateY(-4px); }
+
+    .value-icon { font-size: 32px; margin-bottom: 16px; }
+
+    .value-card h4 { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+
+    .value-card p { font-size: 14px; color: var(--text-muted); font-weight: 300; line-height: 1.6; }
+
+    .contact-section {
+      background: var(--card-bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(34,197,94,0.3);
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 500;
+      padding: 16px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      margin-top: 32px;
+      transition: transform 0.2s;
+    }
+
+    .contact-email:hover { transform: translateY(-2px); }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-left { display: flex; align-items: center; gap: 10px; }
+
+    .footer-logo {
+      width: 28px; height: 28px;
+      background: var(--accent);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .footer-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; }
+
+    .footer-copy { font-size: 13px; color: var(--text-muted); }
+
+    .footer-links { display: flex; gap: 24px; }
+
+    .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .product-card { grid-template-columns: 1fr; }
+      .product-visual { display: none; }
+      .values-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; align-items: flex-start; }
+      .footer-links { flex-wrap: wrap; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">🦅</div>
+    <span class="nav-logo-name">PalconAI</span>
+  </a>
+  <a href="mailto:support@palconai.com" class="nav-cta">Contact Us</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-orb"></div>
+  <div class="hero-badge">
+    <span></span>
+    Building for Bharat
+  </div>
+  <h1>Intelligent Tools<br/>for <em>Everyday India</em></h1>
+  <p>PalconAI builds practical AI-powered applications that solve real problems for Indian farmers, entrepreneurs, and businesses.</p>
+  <div class="hero-actions">
+    <a href="#products" class="btn-primary">Our Products ↓</a>
+    <a href="mailto:support@palconai.com" class="btn-secondary">Get in Touch</a>
+  </div>
+</section>
+
+<section id="products">
+  <div class="section-inner">
+    <div class="section-label">Our Products</div>
+    <h2 class="section-title">Apps built for the real world</h2>
+    <p class="section-sub">We focus on underserved industries where simple, reliable software makes a measurable difference.</p>
+    <div class="product-card">
+      <div class="product-info">
+        <div class="product-tag">🐔 Poultry Farm Management</div>
+        <h3>CoopCash</h3>
+        <p>A complete poultry farm management app for broiler farmers across Andhra Pradesh. Track batches, expenses, sales, mortality, and profitability — all in one place.</p>
+        <ul class="product-features">
+          <li>Batch profit & loss tracking</li>
+          <li>Feed stock alerts</li>
+          <li>Live broiler market prices</li>
+          <li>PDF batch statements</li>
+          <li>Telugu & English support</li>
+          <li>Works in low-connectivity areas</li>
+        </ul>
+        <a href="mailto:support@palconai.com" class="btn-primary">Get Early Access →</a>
+      </div>
+      <div class="product-visual">
+        🐓
+        <div class="product-visual-label">CoopCash — Poultry Farm Manager</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">Why PalconAI</div>
+    <h2 class="section-title">Built with purpose</h2>
+    <p class="section-sub">We believe the best software is invisible — it just works, every time, for every user.</p>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🌾</div>
+        <h4>India-First</h4>
+        <p>Every product is designed specifically for Indian users — their languages, workflows, connectivity constraints, and business realities.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <h4>AI-Powered</h4>
+        <p>We integrate AI where it genuinely helps — not as a buzzword, but as a practical tool that saves time and surfaces real insights.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🔒</div>
+        <h4>Trust First</h4>
+        <p>Your data is yours. We never sell or share personal information. Security and privacy are built into everything we ship.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="section-inner">
+    <div class="contact-inner">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Let's talk</h2>
+      <p style="color: var(--text-muted); font-size: 17px; font-weight: 300;">Have a question, partnership idea, or feedback? We'd love to hear from you.</p>
+      <a href="mailto:support@palconai.com" class="contact-email">
+        📧 support@palconai.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">
+    <div class="footer-logo">🦅</div>
+    <span class="footer-name">PalconAI</span>
+    <span class="footer-copy">· © 2026 PalconAI Technologies Private Limited</span>
+  </div>
+  <div class="footer-links">
+    <a href="https://palconai.github.io/coopcash-privacy/" target="_blank">Privacy Policy</a>
+    <a href="mailto:support@palconai.com">support@palconai.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
