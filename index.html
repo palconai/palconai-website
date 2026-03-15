@@ -1,11 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PalconAI — Building Intelligent Tools for Everyday India</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <title>Palcon AI — AI-Powered Software for Farmers and Small Businesses in India</title>
+  <meta name="description" content="Palcon AI builds practical AI-powered tools for Indian farmers and small businesses. Creator of CoopCash, a poultry farm management app for broiler farmers."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --midnight: #0A0F1E;
@@ -17,6 +19,8 @@
       --text-muted: #94A3B8;
       --border: rgba(255,255,255,0.08);
       --card-bg: rgba(255,255,255,0.04);
+      --card-strong: rgba(255,255,255,0.06);
+      --shadow: 0 20px 60px rgba(0,0,0,0.25);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,7 +28,7 @@
 
     body {
       font-family: 'Outfit', sans-serif;
-      background: var(--midnight);
+      background: radial-gradient(circle at top, rgba(34,197,94,0.08), transparent 30%), var(--midnight);
       color: var(--text);
       font-size: 16px;
       line-height: 1.7;
@@ -47,12 +51,12 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      padding: 20px 48px;
+      padding: 18px 48px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       backdrop-filter: blur(12px);
-      background: rgba(10,15,30,0.8);
+      background: rgba(10,15,30,0.82);
       border-bottom: 1px solid var(--border);
     }
 
@@ -63,35 +67,63 @@
       text-decoration: none;
     }
 
-    .nav-logo-icon {
+    .nav-logo-icon,
+    .footer-logo {
       width: 32px; height: 32px;
-      background: var(--accent);
+      background: linear-gradient(135deg, var(--accent), #7CFC9A);
+      color: #03120a;
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 16px;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(34,197,94,0.2);
     }
 
-    .nav-logo-name {
+    .nav-logo-name,
+    .footer-name {
       font-family: 'Playfair Display', serif;
       font-size: 20px;
       font-weight: 700;
       color: var(--text);
+      letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover { color: var(--text); }
+
+    .nav-cta,
+    .btn-primary,
+    .btn-secondary,
+    .mini-badge,
+    .contact-email {
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
     }
 
     .nav-cta {
       background: var(--accent);
-      color: #000;
-      font-weight: 600;
+      color: #041109;
+      font-weight: 700;
       font-size: 14px;
-      padding: 9px 20px;
-      border-radius: 8px;
+      padding: 10px 20px;
+      border-radius: 10px;
       text-decoration: none;
-      transition: background 0.2s;
     }
 
-    .nav-cta:hover { background: var(--accent-dim); }
+    .nav-cta:hover { background: var(--accent-dim); transform: translateY(-1px); }
 
     .hero {
       position: relative;
@@ -102,10 +134,11 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 120px 24px 80px;
+      padding: 140px 24px 88px;
     }
 
-    .hero-badge {
+    .hero-badge,
+    .mini-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -113,10 +146,13 @@
       border: 1px solid rgba(34,197,94,0.3);
       color: var(--accent);
       font-size: 13px;
-      font-weight: 500;
-      padding: 6px 16px;
-      border-radius: 100px;
-      margin-bottom: 32px;
+      font-weight: 600;
+      padding: 7px 16px;
+      border-radius: 999px;
+    }
+
+    .hero-badge {
+      margin-bottom: 28px;
       animation: fadeUp 0.6s ease both;
     }
 
@@ -134,22 +170,23 @@
 
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(42px, 7vw, 80px);
+      font-size: clamp(42px, 7vw, 82px);
       font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -1.5px;
-      margin-bottom: 24px;
+      line-height: 1.06;
+      letter-spacing: -1.8px;
+      margin-bottom: 22px;
       animation: fadeUp 0.6s 0.1s ease both;
+      max-width: 980px;
     }
 
     .hero h1 em { font-style: normal; color: var(--accent); }
 
     .hero p {
-      font-size: clamp(16px, 2vw, 20px);
+      font-size: clamp(17px, 2vw, 21px);
       color: var(--text-muted);
-      max-width: 560px;
+      max-width: 700px;
       font-weight: 300;
-      margin-bottom: 48px;
+      margin-bottom: 36px;
       animation: fadeUp 0.6s 0.2s ease both;
     }
 
@@ -159,20 +196,21 @@
       flex-wrap: wrap;
       justify-content: center;
       animation: fadeUp 0.6s 0.3s ease both;
+      margin-bottom: 28px;
     }
 
     .btn-primary {
       background: var(--accent);
-      color: #000;
-      font-weight: 600;
+      color: #041109;
+      font-weight: 700;
       font-size: 15px;
-      padding: 14px 32px;
-      border-radius: 10px;
+      padding: 14px 30px;
+      border-radius: 12px;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      transition: transform 0.2s, background 0.2s;
+      box-shadow: 0 12px 35px rgba(34,197,94,0.18);
     }
 
     .btn-primary:hover { transform: translateY(-2px); background: var(--accent-dim); }
@@ -182,21 +220,37 @@
       color: var(--text);
       font-weight: 500;
       font-size: 15px;
-      padding: 14px 32px;
-      border-radius: 10px;
+      padding: 14px 30px;
+      border-radius: 12px;
       text-decoration: none;
       border: 1px solid var(--border);
-      transition: border-color 0.2s, transform 0.2s;
     }
 
     .btn-secondary:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-2px); }
 
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+
+    .hero-proof span {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+    }
+
     .hero-orb {
       position: absolute;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(34,197,94,0.12) 0%, transparent 70%);
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(34,197,94,0.14) 0%, transparent 70%);
       border-radius: 50%;
-      top: 50%; left: 50%;
+      top: 46%; left: 50%;
       transform: translate(-50%, -50%);
       pointer-events: none;
       z-index: -1;
@@ -210,14 +264,14 @@
     section {
       position: relative;
       z-index: 1;
-      padding: 100px 24px;
+      padding: 96px 24px;
     }
 
-    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-inner { max-width: 1120px; margin: 0 auto; }
 
     .section-label {
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--accent);
@@ -228,32 +282,36 @@
       font-family: 'Playfair Display', serif;
       font-size: clamp(32px, 4vw, 48px);
       font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.5px;
+      line-height: 1.15;
+      letter-spacing: -0.6px;
       margin-bottom: 16px;
     }
 
     .section-sub {
       font-size: 17px;
       color: var(--text-muted);
-      max-width: 540px;
+      max-width: 620px;
       font-weight: 300;
-      margin-bottom: 64px;
+      margin-bottom: 56px;
     }
 
     .product-card {
-      background: var(--card-bg);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 48px;
+      border-radius: 24px;
+      padding: 44px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
       align-items: center;
-      transition: border-color 0.3s;
+      transition: border-color 0.3s, transform 0.3s;
+      box-shadow: var(--shadow);
     }
 
-    .product-card:hover { border-color: rgba(34,197,94,0.3); }
+    .product-card:hover {
+      border-color: rgba(34,197,94,0.28);
+      transform: translateY(-2px);
+    }
 
     .product-tag {
       display: inline-flex;
@@ -263,31 +321,42 @@
       border: 1px solid rgba(34,197,94,0.2);
       color: var(--accent);
       font-size: 12px;
-      font-weight: 600;
-      padding: 5px 12px;
-      border-radius: 100px;
-      margin-bottom: 20px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 18px;
     }
 
     .product-card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 36px;
+      font-size: clamp(30px, 4vw, 38px);
       font-weight: 700;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.6px;
       margin-bottom: 12px;
+    }
+
+    .launch-note {
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 600;
     }
 
     .product-card p {
       font-size: 16px;
       color: var(--text-muted);
       font-weight: 300;
-      margin-bottom: 32px;
-      line-height: 1.7;
+      margin-bottom: 28px;
+      line-height: 1.75;
+      max-width: 620px;
     }
 
     .product-features {
       list-style: none;
-      margin-bottom: 36px;
+      margin-bottom: 32px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 18px;
     }
 
     .product-features li {
@@ -296,7 +365,7 @@
       gap: 10px;
       font-size: 14px;
       color: var(--text-muted);
-      padding: 6px 0;
+      padding: 4px 0;
     }
 
     .product-features li::before {
@@ -307,51 +376,137 @@
     }
 
     .product-visual {
-      background: linear-gradient(135deg, rgba(34,197,94,0.1) 0%, rgba(34,197,94,0.03) 100%);
+      background: linear-gradient(135deg, rgba(34,197,94,0.12) 0%, rgba(34,197,94,0.03) 100%);
       border: 1px solid rgba(34,197,94,0.15);
-      border-radius: 16px;
-      padding: 40px;
-      text-align: center;
-      font-size: 80px;
-      line-height: 1;
+      border-radius: 20px;
+      padding: 28px;
+      min-height: 100%;
     }
 
-    .product-visual-label {
-      font-size: 13px;
+    .phone-mock {
+      max-width: 280px;
+      margin: 0 auto;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(5, 10, 20, 0.85);
+      padding: 14px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+    }
+
+    .phone-screen {
+      border-radius: 18px;
+      background: linear-gradient(180deg, #122033 0%, #0D1525 100%);
+      padding: 18px;
+      min-height: 420px;
+      text-align: left;
+    }
+
+    .mock-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      font-size: 12px;
+      color: #C9D4E3;
+    }
+
+    .mock-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .mock-sub {
+      font-size: 12px;
       color: var(--text-muted);
-      margin-top: 16px;
-      font-weight: 400;
+      margin-bottom: 18px;
     }
 
+    .mock-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .mock-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+
+    .mock-row:last-child { margin-bottom: 0; }
+
+    .mock-label {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .mock-value {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .mock-pill {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(34,197,94,0.12);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    .stats-grid,
     .values-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
+    .stat-card,
     .value-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px;
+      border-radius: 18px;
+      padding: 28px;
       transition: border-color 0.3s, transform 0.3s;
     }
 
-    .value-card:hover { border-color: rgba(34,197,94,0.2); transform: translateY(-4px); }
+    .stat-card:hover,
+    .value-card:hover {
+      border-color: rgba(34,197,94,0.2);
+      transform: translateY(-4px);
+    }
 
-    .value-icon { font-size: 32px; margin-bottom: 16px; }
+    .stat-number {
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
 
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .value-icon { font-size: 30px; margin-bottom: 16px; }
     .value-card h4 { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
-
-    .value-card p { font-size: 14px; color: var(--text-muted); font-weight: 300; line-height: 1.6; }
+    .value-card p { font-size: 14px; color: var(--text-muted); font-weight: 300; line-height: 1.65; }
 
     .contact-section {
-      background: var(--card-bg);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
 
-    .contact-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .contact-inner { max-width: 760px; margin: 0 auto; text-align: center; }
 
     .contact-email {
       display: inline-flex;
@@ -361,12 +516,11 @@
       border: 1px solid rgba(34,197,94,0.3);
       color: var(--accent);
       font-size: 18px;
-      font-weight: 500;
-      padding: 16px 32px;
-      border-radius: 12px;
+      font-weight: 600;
+      padding: 16px 28px;
+      border-radius: 14px;
       text-decoration: none;
-      margin-top: 32px;
-      transition: transform 0.2s;
+      margin-top: 28px;
     }
 
     .contact-email:hover { transform: translateY(-2px); }
@@ -374,7 +528,7 @@
     footer {
       position: relative;
       z-index: 1;
-      padding: 40px 48px;
+      padding: 34px 48px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -383,35 +537,59 @@
       gap: 16px;
     }
 
-    .footer-left { display: flex; align-items: center; gap: 10px; }
+    .footer-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 
     .footer-logo {
       width: 28px; height: 28px;
-      background: var(--accent);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-size: 14px;
+      border-radius: 7px;
     }
 
-    .footer-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; }
-
+    .footer-name { font-size: 16px; }
     .footer-copy { font-size: 13px; color: var(--text-muted); }
 
-    .footer-links { display: flex; gap: 24px; }
-
-    .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
 
     .footer-links a:hover { color: var(--accent); }
 
+    @media (max-width: 960px) {
+      .product-card {
+        grid-template-columns: 1fr;
+        padding: 32px;
+      }
+
+      .stats-grid,
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-features {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 768px) {
-      nav { padding: 16px 20px; }
-      .product-card { grid-template-columns: 1fr; }
-      .product-visual { display: none; }
-      .values-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; align-items: flex-start; }
-      .footer-links { flex-wrap: wrap; gap: 16px; }
+      nav {
+        padding: 16px 20px;
+        gap: 12px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-link { display: none; }
+      .hero { padding-top: 132px; }
+      .hero-proof { gap: 10px; }
+      .hero-proof span { width: 100%; }
+      .contact-email { font-size: 16px; padding: 14px 18px; }
+      footer { flex-direction: column; align-items: flex-start; padding: 30px 20px; }
     }
   </style>
 </head>
@@ -419,23 +597,52 @@
 
 <nav>
   <a href="#" class="nav-logo">
-    <div class="nav-logo-icon">🦅</div>
-    <span class="nav-logo-name">PalconAI</span>
+    <div class="nav-logo-icon">P</div>
+    <span class="nav-logo-name">Palcon AI</span>
   </a>
-  <a href="mailto:support@palconai.com" class="nav-cta">Contact Us</a>
+  <div class="nav-links">
+    <a class="nav-link" href="#products">Products</a>
+    <a class="nav-link" href="#about">Why Us</a>
+    <a class="nav-link" href="#contact">Contact</a>
+    <a href="mailto:support@palconai.com" class="nav-cta">Contact Us</a>
+  </div>
 </nav>
 
 <section class="hero">
   <div class="hero-orb"></div>
   <div class="hero-badge">
     <span></span>
-    Building for Bharat
+    Built for India’s real economy
   </div>
-  <h1>Intelligent Tools<br/>for <em>Everyday India</em></h1>
-  <p>PalconAI builds practical AI-powered applications that solve real problems for Indian farmers, entrepreneurs, and businesses.</p>
+  <h1>AI-powered software for <em>farmers</em> and small businesses in India</h1>
+  <p>Palcon AI builds practical tools that solve real operational problems for Indian farmers, entrepreneurs, and growing businesses — starting with poultry farm management.</p>
   <div class="hero-actions">
-    <a href="#products" class="btn-primary">Our Products ↓</a>
+    <a href="#products" class="btn-primary">Explore Products ↓</a>
     <a href="mailto:support@palconai.com" class="btn-secondary">Get in Touch</a>
+  </div>
+  <div class="hero-proof">
+    <span>India-first product design</span>
+    <span>Built for low-connectivity environments</span>
+    <span>Telugu & English support</span>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">1</div>
+        <div class="stat-label">Flagship product in development</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Languages supported in product direction</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Focused on practical, real-world workflows</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -443,12 +650,14 @@
   <div class="section-inner">
     <div class="section-label">Our Products</div>
     <h2 class="section-title">Apps built for the real world</h2>
-    <p class="section-sub">We focus on underserved industries where simple, reliable software makes a measurable difference.</p>
+    <p class="section-sub">We focus on underserved industries where simple, reliable software can make a measurable difference from day one.</p>
+
     <div class="product-card">
       <div class="product-info">
-        <div class="product-tag">🐔 Poultry Farm Management</div>
+        <div class="product-tag">🐔 Poultry Farm Management App</div>
         <h3>CoopCash</h3>
-        <p>A complete poultry farm management app for broiler farmers across India. Track batches, expenses, sales, mortality, and profitability — all in one place.</p>
+        <div class="launch-note">Launching with early access for poultry farmers</div>
+        <p>A complete poultry farm management app for broiler farmers across India. Track batches, expenses, sales, mortality, and profitability in one simple workflow designed for everyday farm operations.</p>
         <ul class="product-features">
           <li>Batch profit & loss tracking</li>
           <li>Feed stock alerts</li>
@@ -457,11 +666,65 @@
           <li>Telugu & English support</li>
           <li>Works in low-connectivity areas</li>
         </ul>
-        <a href="mailto:support@palconai.com" class="btn-primary">Get Early Access →</a>
+        <a href="mailto:support@palconai.com?subject=CoopCash%20Early%20Access" class="btn-primary">Get Early Access →</a>
       </div>
+
       <div class="product-visual">
-        🐓
-        <div class="product-visual-label">CoopCash — Poultry Farm Manager</div>
+        <div class="phone-mock">
+          <div class="phone-screen">
+            <div class="mock-top">
+              <span>CoopCash</span>
+              <span>Live</span>
+            </div>
+            <div class="mock-title">Farm Dashboard</div>
+            <div class="mock-sub">Designed for broiler farm operations</div>
+
+            <div class="mock-card">
+              <div class="mock-row">
+                <div>
+                  <div class="mock-label">Active Batch</div>
+                  <div class="mock-value">Batch #24</div>
+                </div>
+                <div class="mock-pill">Healthy</div>
+              </div>
+              <div class="mock-row">
+                <div>
+                  <div class="mock-label">Bird Count</div>
+                  <div class="mock-value">4,850</div>
+                </div>
+                <div>
+                  <div class="mock-label">Mortality</div>
+                  <div class="mock-value">1.9%</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mock-card">
+              <div class="mock-row">
+                <div>
+                  <div class="mock-label">Feed Stock</div>
+                  <div class="mock-value">18 bags left</div>
+                </div>
+                <div class="mock-pill">Alert soon</div>
+              </div>
+            </div>
+
+            <div class="mock-card">
+              <div class="mock-row">
+                <div>
+                  <div class="mock-label">Estimated P&L</div>
+                  <div class="mock-value">₹48,200</div>
+                </div>
+              </div>
+              <div class="mock-row">
+                <div>
+                  <div class="mock-label">Today’s Market Rate</div>
+                  <div class="mock-value">₹104/kg</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -469,50 +732,48 @@
 
 <section id="about">
   <div class="section-inner">
-    <div class="section-label">Why PalconAI</div>
-    <h2 class="section-title">Built with purpose</h2>
-    <p class="section-sub">We believe the best software is invisible — it just works, every time, for every user.</p>
+    <div class="section-label">Why Palcon AI</div>
+    <h2 class="section-title">Built with purpose, not buzzwords</h2>
+    <p class="section-sub">We believe the best software is practical, dependable, and easy to use — especially in industries where technology still feels out of reach.</p>
     <div class="values-grid">
       <div class="value-card">
         <div class="value-icon">🌾</div>
         <h4>India-First</h4>
-        <p>Every product is designed specifically for Indian users — their languages, workflows, connectivity constraints, and business realities.</p>
+        <p>Every product is designed around Indian users, languages, workflows, connectivity realities, and business constraints.</p>
       </div>
       <div class="value-card">
         <div class="value-icon">⚡</div>
-        <h4>AI-Powered</h4>
-        <p>We integrate AI where it genuinely helps — not as a buzzword, but as a practical tool that saves time and surfaces real insights.</p>
+        <h4>AI Where It Helps</h4>
+        <p>We use AI to save time, reduce friction, and surface useful insights — never just as a label.</p>
       </div>
       <div class="value-card">
         <div class="value-icon">🔒</div>
         <h4>Trust First</h4>
-        <p>Your data is yours. We never sell or share personal information. Security and privacy are built into everything we ship.</p>
+        <p>Your data stays yours. Privacy, reliability, and product clarity are part of every decision we make.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="contact-section">
+<section class="contact-section" id="contact">
   <div class="section-inner">
     <div class="contact-inner">
       <div class="section-label">Contact</div>
-      <h2 class="section-title">Let's talk</h2>
-      <p style="color: var(--text-muted); font-size: 17px; font-weight: 300;">Have a question, partnership idea, or feedback? We'd love to hear from you.</p>
-      <a href="mailto:support@palconai.com" class="contact-email">
-        📧 support@palconai.com
-      </a>
+      <h2 class="section-title">Let’s talk</h2>
+      <p style="color: var(--text-muted); font-size: 17px; font-weight: 300;">Have a question, partnership idea, or want early access to CoopCash? We’d love to hear from you.</p>
+      <a href="mailto:support@palconai.com" class="contact-email">📧 support@palconai.com</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="footer-left">
-    <div class="footer-logo">🦅</div>
-    <span class="footer-name">PalconAI</span>
-    <span class="footer-copy">· © 2026 PalconAI Technologies Private Limited</span>
+    <div class="footer-logo">P</div>
+    <span class="footer-name">Palcon AI</span>
+    <span class="footer-copy">· © 2026 Palcon AI Technologies Private Limited</span>
   </div>
   <div class="footer-links">
-    <a href="https://palconai.github.io/coopcash-privacy/" target="_blank">Privacy Policy</a>
+    <a href="https://palconai.github.io/coopcash-privacy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
     <a href="mailto:support@palconai.com">support@palconai.com</a>
   </div>
 </footer>
