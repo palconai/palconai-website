@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1Z9E80459"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-F1Z9E80459');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Manual – CoopCash | PalconAI</title>
+    <meta name="description" content="Complete user manual for CoopCash by PalconAI Technologies Private Limited." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --midnight: #0B1224;
+            --accent: #22C55E;
+            --accent-dim: #16A34A;
+            --accent-glow: rgba(34, 197, 94, 0.15);
+            --text: #F1F5F9;
+            --text-muted: #94A3B8;
+            --border: rgba(255, 255, 255, 0.08);
+            --card-bg: rgba(255, 255, 255, 0.04);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: radial-gradient(circle at top, rgba(34, 197, 94, 0.08), transparent 30%), var(--midnight);
+            color: var(--text);
+            font-size: 16px;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 18px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            backdrop-filter: blur(12px);
+            background: rgba(10, 15, 30, 0.82);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            display: flex; align-items: center; gap: 10px; text-decoration: none;
+        }
+        .nav-logo-icon {
+            width: 32px; height: 32px;
+            background: linear-gradient(135deg, var(--accent), #7CFC9A);
+            color: #03120a; border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px; font-weight: 700;
+            box-shadow: 0 10px 25px rgba(34,197,94,0.2);
+        }
+        .nav-logo-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: -0.3px;
+        }
+        .nav-back {
+            color: var(--text-muted); text-decoration: none; font-size: 14px;
+            display: flex; align-items: center; gap: 6px; transition: color 0.2s;
+        }
+        .nav-back:hover { color: var(--text); }
+
+        .page-header {
+            position: relative; z-index: 1;
+            padding: 140px 24px 64px; text-align: center;
+        }
+        .page-header .section-label {
+            font-size: 12px; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+        }
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 52px); font-weight: 700;
+            letter-spacing: -1px; margin-bottom: 16px;
+        }
+        .page-header p { font-size: 15px; color: var(--text-muted); font-weight: 300; }
+
+        .info-bar {
+            display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+            margin: 0 auto 48px; max-width: 760px; padding: 0 24px;
+        }
+        .info-chip {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: var(--accent-glow); border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 500; color: var(--accent);
+        }
+
+        /* TOC */
+        .toc {
+            position: relative; z-index: 1;
+            max-width: 760px; margin: 0 auto 48px; padding: 0 24px;
+            background: var(--card-bg); border: 1px solid var(--border);
+            border-radius: 16px; padding: 28px 32px;
+        }
+        .toc h3 {
+            font-family: 'Playfair Display', serif; font-size: 18px;
+            margin-bottom: 16px; color: var(--text);
+        }
+        .toc ol { padding-left: 20px; }
+        .toc ol li { margin-bottom: 8px; }
+        .toc a { color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 500; }
+        .toc a:hover { text-decoration: underline; }
+
+        .content {
+            position: relative; z-index: 1;
+            max-width: 760px; margin: 0 auto; padding: 0 24px 96px;
+        }
+
+        .policy-section {
+            margin-bottom: 40px; padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+        .policy-section:last-child { border-bottom: none; }
+
+        .section-num {
+            display: inline-block;
+            background: var(--accent-glow); border: 1px solid rgba(34,197,94,0.2);
+            color: var(--accent); font-size: 11px; font-weight: 700;
+            letter-spacing: 1.5px; padding: 4px 10px; border-radius: 999px;
+            margin-bottom: 12px; text-transform: uppercase;
+        }
+
+        .policy-section h2 {
+            font-family: 'Playfair Display', serif; font-size: 22px;
+            font-weight: 600; color: var(--text); margin-bottom: 14px; letter-spacing: -0.3px;
+        }
+
+        .policy-section h3 {
+            font-size: 16px; font-weight: 600; color: var(--text);
+            margin: 20px 0 8px;
+        }
+
+        .policy-section p {
+            color: var(--text-muted); font-size: 15px; margin-bottom: 12px; font-weight: 300;
+        }
+
+        .policy-section ul { list-style: none; margin: 12px 0; }
+        .policy-section ul li {
+            padding: 6px 0 6px 20px; position: relative;
+            color: var(--text-muted); font-size: 15px; font-weight: 300;
+        }
+        .policy-section ul li::before {
+            content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 600;
+        }
+
+        .policy-section ol { padding-left: 20px; margin: 12px 0; }
+        .policy-section ol li {
+            color: var(--text-muted); font-size: 15px; font-weight: 300; margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background: var(--accent-glow); border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 12px; padding: 14px 18px; margin: 16px 0;
+            font-size: 14px; color: var(--accent);
+        }
+
+        .tip-box {
+            background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            border-radius: 8px; padding: 14px 18px; margin: 16px 0;
+            font-size: 14px; color: var(--text-muted);
+        }
+        .tip-box strong { color: var(--accent); }
+
+        .contact-card {
+            background: var(--card-bg); border: 1px solid var(--border);
+            border-radius: 14px; padding: 24px; margin-top: 16px;
+        }
+        .contact-card p { margin-bottom: 8px; font-size: 14px; color: var(--text-muted); font-weight: 300; }
+        .contact-card a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .contact-card a:hover { text-decoration: underline; }
+
+        .step-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;
+        }
+        @media (max-width: 600px) { .step-grid { grid-template-columns: 1fr; } }
+
+        .step-card {
+            background: var(--card-bg); border: 1px solid var(--border);
+            border-radius: 12px; padding: 16px;
+        }
+        .step-card .step-num {
+            font-size: 11px; font-weight: 700; color: var(--accent);
+            letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;
+        }
+        .step-card p { font-size: 14px; color: var(--text-muted); margin: 0; }
+
+        footer {
+            position: relative; z-index: 1;
+            padding: 32px 48px;
+            display: flex; align-items: center; justify-content: space-between;
+            border-top: 1px solid var(--border); flex-wrap: wrap; gap: 16px;
+        }
+        .footer-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .footer-logo {
+            width: 28px; height: 28px;
+            background: linear-gradient(135deg, var(--accent), #7CFC9A);
+            color: #03120a; border-radius: 7px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700;
+        }
+        .footer-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--text); }
+        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--accent); }
+
+        @media (max-width: 600px) {
+            nav { padding: 16px 20px; }
+            footer { padding: 24px 20px; flex-direction: column; }
+            .toc { padding: 20px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="https://palconai.com" class="nav-logo">
+            <div class="nav-logo-icon">P</div>
+            <span class="nav-logo-name">PalconAI</span>
+        </a>
+        <a href="https://palconai.com" class="nav-back">← Back to Home</a>
+    </nav>
+
+    <div class="page-header">
+        <div class="section-label">Documentation</div>
+        <h1>CoopCash User Manual</h1>
+        <p>Everything you need to know to manage your poultry farm with CoopCash.</p>
+    </div>
+
+    <div class="info-bar">
+        <span class="info-chip">🐔 For Broiler Farmers</span>
+        <span class="info-chip">📱 Android App</span>
+        <span class="info-chip">🇮🇳 India</span>
+        <span class="info-chip">Last updated: March 2026</span>
+    </div>
+
+    <div class="toc" style="position:relative;z-index:1;max-width:760px;margin:0 auto 48px;padding:28px 32px;">
+        <h3>📋 Table of Contents</h3>
+        <ol>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#batches">Managing Batches</a></li>
+            <li><a href="#expenses">Recording Expenses</a></li>
+            <li><a href="#sales">Recording Sales</a></li>
+            <li><a href="#mortality">Recording Mortality</a></li>
+            <li><a href="#growth">Growth Tracking</a></li>
+            <li><a href="#market-prices">Market Prices</a></li>
+            <li><a href="#farm-insights">Farm Insights</a></li>
+            <li><a href="#pdf-reports">PDF Reports</a></li>
+            <li><a href="#subscription">Plans & Subscription</a></li>
+            <li><a href="#account">Account & Settings</a></li>
+            <li><a href="#support">Support</a></li>
+        </ol>
+    </div>
+
+    <div class="content">
+
+        <!-- 1. Getting Started -->
+        <div class="policy-section" id="getting-started">
+            <span class="section-num">01</span>
+            <h2>Getting Started</h2>
+            <p>CoopCash is a farm management app for Indian broiler farmers. It helps you track expenses, sales, mortality, and profits — all in one place.</p>
+
+            <h3>Download & Install</h3>
+            <p>Download CoopCash from the Google Play Store. Search for "CoopCash" or visit the link on our website.</p>
+
+            <h3>Sign Up</h3>
+            <ol>
+                <li>Open CoopCash and enter your mobile number.</li>
+                <li>Enter the OTP sent to your number.</li>
+                <li>Enter your name and select your district.</li>
+                <li>Choose your preferred language (Telugu, Tamil, Malayalam, Hindi, Kannada, or English).</li>
+                <li>You are now on the Standard plan. You can start a 60-day free Pro trial from the home screen.</li>
+            </ol>
+
+            <div class="tip-box">
+                <strong>Tip:</strong> You can change your language anytime from Settings → Language.
+            </div>
+        </div>
+
+        <!-- 2. Batches -->
+        <div class="policy-section" id="batches">
+            <span class="section-num">02</span>
+            <h2>Managing Batches</h2>
+            <p>A batch represents one cycle of broiler farming — from chick placement to final sale.</p>
+
+            <h3>Starting a New Batch</h3>
+            <ol>
+                <li>Tap <strong>+ New Batch</strong> on the home screen.</li>
+                <li>Select your location and shed.</li>
+                <li>Enter the number of chicks, price per chick, and placement date.</li>
+                <li>Optionally enter chick company and breed details.</li>
+                <li>Tap <strong>Start Batch</strong> to begin.</li>
+            </ol>
+
+            <div class="tip-box">
+                <strong>Tip:</strong> The placement date can be set up to 7 days in the future if you are planning ahead.
+            </div>
+
+            <h3>Batch Status</h3>
+            <ul>
+                <li><strong>Active</strong> — Batch is ongoing. You can add expenses, sales, and mortality.</li>
+                <li><strong>Completed</strong> — All birds have been sold. Final P&L is calculated.</li>
+            </ul>
+
+            <h3>Standard Plan Limits</h3>
+            <p>Standard plan allows 1 active batch at a time. Upgrade to Pro for unlimited active batches.</p>
+
+            <h3>Archiving & Restoring</h3>
+            <p>Completed batches can be archived to keep your list clean. You can restore them anytime from the archived batches view.</p>
+        </div>
+
+        <!-- 3. Expenses -->
+        <div class="policy-section" id="expenses">
+            <span class="section-num">03</span>
+            <h2>Recording Expenses</h2>
+            <p>Track all costs for your batch — feed, medicine, vaccines, labour, and more.</p>
+
+            <h3>Adding an Expense</h3>
+            <ol>
+                <li>Open your batch and go to the <strong>Expenses</strong> tab.</li>
+                <li>Tap a category card (Feed, Medicine, Vaccine, Labour, Other) or tap <strong>+</strong> on any card.</li>
+                <li>Enter the expense details — amount, date, and notes.</li>
+                <li>For feed expenses, enter number of bags, bag size, and price per bag.</li>
+                <li>For medicine/vaccine, you can optionally enter medicine name and company.</li>
+                <li>Tap <strong>Save</strong>.</li>
+            </ol>
+
+            <h3>Scan a Bill</h3>
+            <p>Tap <strong>Scan Bill</strong> when adding an expense to automatically read the amount, date, and details from a photo of your bill. Works with printed and handwritten bills in Telugu and English.</p>
+
+            <div class="tip-box">
+                <strong>Tip:</strong> The chick purchase expense is automatically created when you start a batch. Tap the chick card to edit it.
+            </div>
+
+            <h3>Bulk Delete</h3>
+            <p>Check the <strong>Select All</strong> checkbox to select multiple expenses and delete them together. The chick expense cannot be deleted.</p>
+        </div>
+
+        <!-- 4. Sales -->
+        <div class="policy-section" id="sales">
+            <span class="section-num">04</span>
+            <h2>Recording Sales</h2>
+            <p>Record each sale as birds leave your farm. Multiple traders can be recorded per batch.</p>
+
+            <h3>Adding a Sale</h3>
+            <ol>
+                <li>Open your batch and go to the <strong>Sales</strong> tab.</li>
+                <li>Tap <strong>+ Add Sale</strong>.</li>
+                <li>Enter number of birds sold, average weight per bird, and rate per kg.</li>
+                <li>Enter the trader/buyer name and sale date.</li>
+                <li>Tap <strong>Save</strong>.</li>
+            </ol>
+
+            <h3>Multi-Trader Sales</h3>
+            <p>You can record multiple sales to different traders. Each sale is numbered S#1, S#2, etc. The app calculates weighted average rate and total revenue automatically.</p>
+
+            <h3>Scan Sales Bill</h3>
+            <p>Tap <strong>Scan Bill</strong> to automatically fill in sale details from a trader's bill. You can scan multiple bills at once and review before saving.</p>
+
+            <div class="tip-box">
+                <strong>Tip:</strong> When all birds are sold, the batch automatically completes and final P&L is calculated.
+            </div>
+        </div>
+
+        <!-- 5. Mortality -->
+        <div class="policy-section" id="mortality">
+            <span class="section-num">05</span>
+            <h2>Recording Mortality</h2>
+            <p>Track bird deaths daily to keep your mortality percentage accurate.</p>
+
+            <h3>Adding a Mortality Entry</h3>
+            <ol>
+                <li>Open your batch and go to the <strong>Mortality</strong> tab.</li>
+                <li>Tap <strong>+ Add Mortality</strong>.</li>
+                <li>Enter the number of birds that died and the date.</li>
+                <li>Optionally enter the reason.</li>
+                <li>Tap <strong>Save</strong>.</li>
+            </ol>
+
+            <p>The mortality percentage is automatically updated on the batch summary card.</p>
+        </div>
+
+        <!-- 6. Growth -->
+        <div class="policy-section" id="growth">
+            <span class="section-num">06</span>
+            <h2>Growth Tracking</h2>
+            <p>Track bird weight over time to monitor growth against target.</p>
+
+            <h3>Adding a Weight Record</h3>
+            <ol>
+                <li>Open your batch and tap <strong>Add Weight</strong> on the batch card.</li>
+                <li>Enter the average weight in grams or kg.</li>
+                <li>Select the date of weighing.</li>
+                <li>Tap <strong>Save</strong>.</li>
+            </ol>
+
+            <p>The <strong>Growth</strong> tab shows a chart of actual weight vs target weight over the batch days.</p>
+
+            <h3>Feed Phase Tracker</h3>
+            <p>The feed phase card shows your current phase (PBS, BS, or Finisher), recommended feed bags, and how many bags you have used so far.</p>
+        </div>
+
+        <!-- 7. Market Prices -->
+        <div class="policy-section" id="market-prices">
+            <span class="section-num">07</span>
+            <h2>Market Prices</h2>
+            <p>View live broiler market prices across all states and districts in India.</p>
+
+            <ul>
+                <li>Tap <strong>Market Prices</strong> from the home screen.</li>
+                <li>States are grouped and collapsible. Andhra Pradesh is expanded by default.</li>
+                <li>Switch between <strong>Prices</strong> and <strong>Trend</strong> tabs to see price history charts.</li>
+                <li>A 🔼 or 🔽 indicator shows if tomorrow's price is expected to change.</li>
+            </ul>
+        </div>
+
+        <!-- 8. Farm Insights -->
+        <div class="policy-section" id="farm-insights">
+            <span class="section-num">08</span>
+            <h2>Farm Insights</h2>
+            <p>Farm Insights gives you a smart overview of your entire farm's performance. Available on Pro plan.</p>
+
+            <h3>Overview Tab</h3>
+            <p>Shows total birds, total revenue, total expenses, and net P&L across all batches.</p>
+
+            <h3>Charts Tab</h3>
+            <p>Donut charts showing expense breakdown per batch — Feed, Chicks, Medicine, Labour, and Other as percentages of total spend.</p>
+
+            <h3>Health Tab</h3>
+            <p>Flock Health Score per batch based on Mortality %, FCR, and weight vs target. Shows 🟢 Healthy, 🟡 Monitor, or 🔴 At Risk status.</p>
+        </div>
+
+        <!-- 9. PDF Reports -->
+        <div class="policy-section" id="pdf-reports">
+            <span class="section-num">09</span>
+            <h2>PDF Reports</h2>
+            <p>Generate and share professional PDF reports for your batches.</p>
+
+            <h3>Batch Report</h3>
+            <ol>
+                <li>Open a completed batch.</li>
+                <li>Tap the download icon (⬇) in the top right.</li>
+                <li>The PDF is generated with summary, sales details, and feed details.</li>
+                <li>Share via WhatsApp, email, or save to your phone.</li>
+            </ol>
+
+            <div class="tip-box">
+                <strong>Note:</strong> Completed batch PDF is available on Standard plan. Ongoing batch PDF requires Pro.
+            </div>
+
+            <h3>Farm Statement</h3>
+            <p>From Farm Insights, tap <strong>Statement</strong> to generate an all-time farm P&L statement across all batches.</p>
+        </div>
+
+        <!-- 10. Subscription -->
+        <div class="policy-section" id="subscription">
+            <span class="section-num">10</span>
+            <h2>Plans & Subscription</h2>
+
+            <h3>Standard Plan (Free)</h3>
+            <ul>
+                <li>1 location, 1 shed</li>
+                <li>Unlimited batches (1 active at a time)</li>
+                <li>Completed batch PDF reports</li>
+                <li>Market prices & full history</li>
+                <li>Basic insights</li>
+            </ul>
+
+            <h3>CoopCash Pro</h3>
+            <ul>
+                <li>Unlimited locations & sheds</li>
+                <li>Multiple active batches</li>
+                <li>Farm Insights (Overview, Charts, Health)</li>
+                <li>Ongoing batch PDF reports</li>
+                <li>Scan Bill feature</li>
+                <li>Priority WhatsApp support</li>
+            </ul>
+
+            <h3>Free Trial</h3>
+            <p>New users can start a 60-day free Pro trial. Tap <strong>Try Pro free for 60 days</strong> on the home screen banner, or tap any Pro feature to begin your trial.</p>
+
+            <div class="highlight-box">
+                🎉 Launch offer: ₹199/month or ₹1,999/year (regular ₹299/month or ₹2,990/year)
+            </div>
+
+            <h3>How to Upgrade</h3>
+            <ol>
+                <li>Go to Settings → Standard Plan → tap <strong>Go Pro ✨</strong></li>
+                <li>Or tap any Pro-gated feature.</li>
+                <li>Select Monthly or Yearly plan.</li>
+                <li>Complete payment via Google Play.</li>
+            </ol>
+
+            <h3>How to Cancel</h3>
+            <p>To cancel your subscription, go to <strong>Google Play Store → My Subscriptions → CoopCash → Cancel Subscription</strong>. Your Pro access continues until the end of the billing period.</p>
+
+            <h3>Your Data After Cancellation</h3>
+            <div class="highlight-box">
+                We never delete your farm data. If you cancel Pro, your data is locked — not deleted. You can resubscribe anytime and access all your records.
+            </div>
+
+            <p>For refund queries, see our <a href="https://palconai.com/refund.html" style="color:var(--accent)">Refund Policy</a>.</p>
+        </div>
+
+        <!-- 11. Account & Settings -->
+        <div class="policy-section" id="account">
+            <span class="section-num">11</span>
+            <h2>Account & Settings</h2>
+
+            <h3>Edit Profile</h3>
+            <p>Go to Settings → Edit Profile to update your name or district.</p>
+
+            <h3>Change Language</h3>
+            <p>Go to Settings → Language to switch between Telugu, Tamil, Malayalam, Hindi, Kannada, and English.</p>
+
+            <h3>Manage Locations & Sheds</h3>
+            <p>Go to Settings → Manage Locations & Sheds to add, edit, or remove farm locations and sheds.</p>
+
+            <h3>Delete Account</h3>
+            <p>To permanently delete your account and all data, visit <a href="https://palconai.com/delete-account.html" style="color:var(--accent)">palconai.com/delete-account.html</a> or go to Settings → Delete Account.</p>
+
+            <div class="tip-box">
+                <strong>Warning:</strong> Account deletion is permanent and cannot be undone. All your farm data will be erased.
+            </div>
+        </div>
+
+        <!-- 12. Support -->
+        <div class="policy-section" id="support">
+            <span class="section-num">12</span>
+            <h2>Support</h2>
+            <p>Need help? We are here for you.</p>
+
+            <div class="contact-card">
+                <p>📱 <strong>WhatsApp Support (Fast Response)</strong></p>
+                <p><a href="https://wa.me/message/your-whatsapp-link">Chat with us on WhatsApp</a></p>
+                <p>📧 <strong>Email</strong></p>
+                <p><a href="mailto:support@palconai.com">support@palconai.com</a></p>
+                <p>🌐 <strong>Website</strong></p>
+                <p><a href="https://palconai.com">palconai.com</a></p>
+            </div>
+
+            <div class="tip-box" style="margin-top:24px;">
+                <strong>FAQ & Help</strong> is also available inside the app under Settings → FAQ & Help.
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-left">
+            <div class="footer-logo">P</div>
+            <span class="footer-name">PalconAI</span>
+            <span style="color:var(--text-muted);font-size:13px;">© 2026 PalconAI Technologies Private Limited</span>
+        </div>
+        <div class="footer-links">
+            <a href="https://palconai.com/privacy.html">Privacy Policy</a>
+            <a href="https://palconai.com/terms.html">Terms of Service</a>
+            <a href="https://palconai.com/refund.html">Refund Policy</a>
+            <a href="mailto:support@palconai.com">Contact</a>
+        </div>
+    </footer>
+
+</body>
+</html>
