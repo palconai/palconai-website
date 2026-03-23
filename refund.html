@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1Z9E80459"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-F1Z9E80459');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Refund Policy – CoopCash | PalconAI</title>
+    <meta name="description" content="Refund Policy for CoopCash by PalconAI Technologies Private Limited." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --midnight: #0B1224;
+            --accent: #22C55E;
+            --accent-dim: #16A34A;
+            --accent-glow: rgba(34, 197, 94, 0.15);
+            --text: #F1F5F9;
+            --text-muted: #94A3B8;
+            --border: rgba(255, 255, 255, 0.08);
+            --card-bg: rgba(255, 255, 255, 0.04);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: radial-gradient(circle at top, rgba(34, 197, 94, 0.08), transparent 30%), var(--midnight);
+            color: var(--text);
+            font-size: 16px;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 18px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            backdrop-filter: blur(12px);
+            background: rgba(10, 15, 30, 0.82);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .nav-logo-icon {
+            width: 32px; height: 32px;
+            background: linear-gradient(135deg, var(--accent), #7CFC9A);
+            color: #03120a; border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px; font-weight: 700;
+            box-shadow: 0 10px 25px rgba(34,197,94,0.2);
+        }
+        .nav-logo-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: -0.3px;
+        }
+        .nav-back {
+            color: var(--text-muted); text-decoration: none; font-size: 14px;
+            display: flex; align-items: center; gap: 6px; transition: color 0.2s;
+        }
+        .nav-back:hover { color: var(--text); }
+
+        .page-header {
+            position: relative; z-index: 1;
+            padding: 140px 24px 64px; text-align: center;
+        }
+        .page-header .section-label {
+            font-size: 12px; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+        }
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 52px); font-weight: 700;
+            letter-spacing: -1px; margin-bottom: 16px;
+        }
+        .page-header p { font-size: 15px; color: var(--text-muted); font-weight: 300; }
+
+        .info-bar {
+            display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+            margin: 0 auto 48px; max-width: 760px; padding: 0 24px;
+        }
+        .info-chip {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: var(--accent-glow); border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 500; color: var(--accent);
+        }
+
+        .content {
+            position: relative; z-index: 1;
+            max-width: 760px; margin: 0 auto; padding: 0 24px 96px;
+        }
+
+        .policy-section {
+            margin-bottom: 40px; padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+        .policy-section:last-child { border-bottom: none; }
+
+        .section-num {
+            display: inline-block;
+            background: var(--accent-glow); border: 1px solid rgba(34,197,94,0.2);
+            color: var(--accent); font-size: 11px; font-weight: 700;
+            letter-spacing: 1.5px; padding: 4px 10px; border-radius: 999px;
+            margin-bottom: 12px; text-transform: uppercase;
+        }
+
+        .policy-section h2 {
+            font-family: 'Playfair Display', serif; font-size: 22px;
+            font-weight: 600; color: var(--text); margin-bottom: 14px; letter-spacing: -0.3px;
+        }
+
+        .policy-section p {
+            color: var(--text-muted); font-size: 15px; margin-bottom: 12px; font-weight: 300;
+        }
+
+        .policy-section ul { list-style: none; margin: 12px 0; }
+        .policy-section ul li {
+            padding: 6px 0 6px 20px; position: relative;
+            color: var(--text-muted); font-size: 15px; font-weight: 300;
+        }
+        .policy-section ul li::before {
+            content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 600;
+        }
+
+        .highlight-box {
+            background: var(--accent-glow); border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 12px; padding: 14px 18px; margin: 16px 0;
+            font-size: 14px; color: var(--accent);
+        }
+
+        .contact-card {
+            background: var(--card-bg); border: 1px solid var(--border);
+            border-radius: 14px; padding: 24px; margin-top: 16px;
+        }
+        .contact-card p { margin-bottom: 8px; font-size: 14px; color: var(--text-muted); font-weight: 300; }
+        .contact-card a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .contact-card a:hover { text-decoration: underline; }
+
+        footer {
+            position: relative; z-index: 1;
+            padding: 32px 48px;
+            display: flex; align-items: center; justify-content: space-between;
+            border-top: 1px solid var(--border); flex-wrap: wrap; gap: 16px;
+        }
+        .footer-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .footer-logo {
+            width: 28px; height: 28px;
+            background: linear-gradient(135deg, var(--accent), #7CFC9A);
+            color: #03120a; border-radius: 7px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700;
+        }
+        .footer-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--text); }
+        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--accent); }
+
+        @media (max-width: 600px) {
+            nav { padding: 16px 20px; }
+            footer { padding: 24px 20px; flex-direction: column; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="https://palconai.com" class="nav-logo">
+            <div class="nav-logo-icon">P</div>
+            <span class="nav-logo-name">PalconAI</span>
+        </a>
+        <a href="https://palconai.com" class="nav-back">← Back to Home</a>
+    </nav>
+
+    <div class="page-header">
+        <div class="section-label">Legal</div>
+        <h1>Refund Policy</h1>
+        <p>CoopCash by PalconAI Technologies Private Limited</p>
+    </div>
+
+    <div class="info-bar">
+        <span class="info-chip">📅 Effective: March 2026</span>
+        <span class="info-chip">🇮🇳 India</span>
+    </div>
+
+    <div class="content">
+
+        <div class="policy-section">
+            <span class="section-num">01</span>
+            <h2>Free Trial</h2>
+            <p>CoopCash offers a 60-day free Pro trial to all new users. No payment is required during the trial period. You can explore all Pro features at no cost.</p>
+            <div class="highlight-box">
+                No credit card is required to start your free trial. You will never be charged automatically.
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <span class="section-num">02</span>
+            <h2>Subscription Payments</h2>
+            <p>CoopCash Pro subscriptions are processed through Google Play Store. All payments are subject to Google Play's billing terms and conditions.</p>
+            <ul>
+                <li>Monthly plan: billed every 30 days</li>
+                <li>Yearly plan: billed once every 12 months</li>
+                <li>Subscriptions auto-renew unless cancelled before the renewal date</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <span class="section-num">03</span>
+            <h2>Refund Eligibility</h2>
+            <p>We offer refunds in the following cases:</p>
+            <ul>
+                <li>You were charged after cancelling your subscription due to a technical error</li>
+                <li>You were charged twice for the same billing period</li>
+                <li>The app was completely non-functional for the majority of your billing period due to a bug on our side</li>
+            </ul>
+            <p>Refund requests must be made within <strong>7 days</strong> of the charge.</p>
+        </div>
+
+        <div class="policy-section">
+            <span class="section-num">04</span>
+            <h2>Non-Refundable Cases</h2>
+            <p>Refunds will not be issued in the following cases:</p>
+            <ul>
+                <li>You forgot to cancel before the renewal date</li>
+                <li>You no longer use the app but the subscription is still active</li>
+                <li>You did not use the Pro features during the billing period</li>
+                <li>Partial month or partial year usage</li>
+                <li>Change of mind after purchase</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <span class="section-num">05</span>
+            <h2>How to Cancel</h2>
+            <p>To cancel your CoopCash Pro subscription:</p>
+            <ul>
+                <li>Open Google Play Store on your Android device</li>
+                <li>Tap your profile icon → Payments & subscriptions → Subscriptions</li>
+                <li>Find CoopCash and tap Cancel subscription</li>
+            </ul>
+            <p>Your Pro access continues until the end of the current billing period. You will not be charged again after cancellation.</p>
+            <div class="highlight-box">
+                We never delete your farm data when you cancel. All your records remain safe and accessible when you resubscribe.
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <span class="section-num">06</span>
+            <h2>How to Request a Refund</h2>
+            <p>If you believe you are eligible for a refund, contact us within 7 days of the charge:</p>
+            <div class="contact-card">
+                <p>📧 <strong>Email</strong></p>
+                <p><a href="mailto:support@palconai.com">support@palconai.com</a></p>
+                <p>📱 <strong>WhatsApp</strong></p>
+                <p><a href="https://wa.me/918328181468?text=Hi%20CoopCash%20Support%2C%20I%20need%20a%20refund">Chat with us on WhatsApp</a></p>
+            </div>
+            <p style="margin-top:16px;">Please include your registered mobile number and the date of the charge in your message. We will respond within 2 business days.</p>
+        </div>
+
+        <div class="policy-section">
+            <span class="section-num">07</span>
+            <h2>Google Play Refunds</h2>
+            <p>You may also request a refund directly through Google Play Store within 48 hours of purchase. Visit <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" style="color:var(--accent)">Google Play refund help</a> for more information.</p>
+        </div>
+
+        <div class="policy-section">
+            <span class="section-num">08</span>
+            <h2>Contact Us</h2>
+            <p>For any questions about this refund policy, please contact us:</p>
+            <div class="contact-card">
+                <p>🏢 <strong>PalconAI Technologies Private Limited</strong></p>
+                <p>📧 <a href="mailto:support@palconai.com">support@palconai.com</a></p>
+                <p>🌐 <a href="https://palconai.com">palconai.com</a></p>
+                <p>🇮🇳 India</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-left">
+            <div class="footer-logo">P</div>
+            <span class="footer-name">PalconAI</span>
+            <span style="color:var(--text-muted);font-size:13px;">© 2026 PalconAI Technologies Private Limited</span>
+        </div>
+        <div class="footer-links">
+            <a href="https://palconai.com/privacy.html">Privacy Policy</a>
+            <a href="https://palconai.com/terms.html">Terms of Service</a>
+            <a href="https://palconai.com/user-manual.html">User Manual</a>
+            <a href="mailto:support@palconai.com">Contact</a>
+        </div>
+    </footer>
+
+</body>
+</html>
