@@ -122,7 +122,6 @@
             color: var(--text);
         }
 
-        /* PAGE HEADER */
         .page-header {
             position: relative;
             z-index: 1;
@@ -153,7 +152,6 @@
             font-weight: 300;
         }
 
-        /* INFO BAR */
         .info-bar {
             display: flex;
             flex-wrap: wrap;
@@ -177,7 +175,6 @@
             color: var(--accent);
         }
 
-        /* CONTENT */
         .content {
             position: relative;
             z-index: 1;
@@ -283,7 +280,6 @@
             text-decoration: underline;
         }
 
-        /* FOOTER */
         footer {
             position: relative;
             z-index: 1;
@@ -372,7 +368,7 @@
     <div class="page-header">
         <div class="section-label">Legal</div>
         <h1>Privacy Policy</h1>
-        <p>Effective Date: March 9, 2026 · Last Updated: March 15, 2026</p>
+        <p>Effective Date: March 9, 2026 · Last Updated: March 26, 2026</p>
     </div>
 
     <div class="info-bar">
@@ -419,6 +415,8 @@
                 <li>Storing and displaying your farm management data</li>
                 <li>Generating batch performance reports (PDF)</li>
                 <li>Sending feed stock alerts and farm notifications</li>
+                <li>Powering Coopi, our AI farm assistant, to answer questions about your farm data</li>
+                <li>Processing bill images via AI for automatic expense extraction</li>
                 <li>Improving app features and fixing bugs</li>
             </ul>
             <p>We do <strong>not</strong> sell, rent, or trade your personal information to any third parties for
@@ -433,7 +431,7 @@
                 gateway service in India.</p>
             <ul>
                 <li>Data is encrypted in transit using HTTPS/TLS</li>
-                <li>Data is stored on secure cloud servers</li>
+                <li>Data is stored on secure cloud servers located in Mumbai, India</li>
                 <li>Access is restricted to authenticated users only</li>
                 <li>We do not store OTP codes — they expire after verification</li>
             </ul>
@@ -446,6 +444,13 @@
             <ul>
                 <li><strong>Supabase</strong> — Database and authentication infrastructure</li>
                 <li><strong>2Factor.in</strong> — OTP SMS delivery service</li>
+                <li><strong>Google Gemini API</strong> — Used for bill scanning and AI-powered expense extraction. Bill
+                    images are processed by Google's AI services. Google's privacy policy applies.</li>
+                <li><strong>Anthropic Claude API</strong> — Used for Coopi, our AI farm assistant. Your farm data
+                    queries are processed by Anthropic's AI services to generate responses. Anthropic's privacy policy
+                    applies.</li>
+                <li><strong>Google Analytics</strong> — Used on our website (palconai.com) to understand visitor
+                    behaviour using anonymous cookies. Not used within the mobile app.</li>
             </ul>
             <p>These services have their own privacy policies and are responsible for their own data practices.</p>
         </div>
@@ -481,13 +486,40 @@
 
         <div class="policy-section">
             <span class="section-num">09</span>
+            <h2>Cookies &amp; Analytics</h2>
+            <p>We use Google Analytics on our website (palconai.com) to understand visitor behaviour. Google Analytics
+                uses cookies to collect anonymous usage data.</p>
+            <p>We do <strong>not</strong> use cookies in our mobile app.</p>
+            <p>You can opt-out of Google Analytics by installing the <a
+                    href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Analytics Opt-out Browser
+                    Add-on</a>.</p>
+        </div>
+
+        <div class="policy-section">
+            <span class="section-num">10</span>
             <h2>Changes to This Policy</h2>
             <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an
                 updated effective date. We encourage you to review this policy periodically.</p>
         </div>
 
         <div class="policy-section">
-            <span class="section-num">10</span>
+            <span class="section-num">11</span>
+            <h2>Grievance Officer</h2>
+            <p>In accordance with the Information Technology Act 2000 and the Information Technology (Intermediary
+                Guidelines and Digital Media Ethics Code) Rules 2021, the details of the Grievance Officer are provided
+                below:</p>
+            <div class="contact-card">
+                <p>👤 <strong style="color: var(--text);">PalconAI Support Team</strong></p>
+                <p>🏷️ <strong style="color: var(--text);">Designation:</strong> Grievance Officer, PalconAI
+                    Technologies Private Limited</p>
+                <p>📧 <a href="mailto:support@palconai.com">support@palconai.com</a></p>
+                <p>⏱ Grievances will be acknowledged and addressed within <strong
+                        style="color: var(--text);">30 days</strong> of receipt.</p>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <span class="section-num">12</span>
             <h2>Contact Us</h2>
             <p>If you have any questions or concerns about this Privacy Policy, please contact us:</p>
             <div class="contact-card">
