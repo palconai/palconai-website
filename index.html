@@ -359,7 +359,7 @@
             display: grid;
             grid-template-columns: 1.15fr 0.85fr;
             gap: 40px;
-            align-items: center;
+            align-items: start;
             transition: border-color 0.3s ease, transform 0.3s ease;
             box-shadow: var(--shadow);
         }
@@ -436,7 +436,9 @@
             border: 1px solid rgba(34, 197, 94, 0.15);
             border-radius: 20px;
             padding: 28px;
-            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
 
         .phone-mock {
@@ -720,6 +722,7 @@
             box-shadow: 0 6px 20px rgba(34, 197, 94, 0.25);
         }
 
+        /* ── Coopi Section ── */
         .coopi-section {
             margin: 28px 0 32px;
             background: linear-gradient(135deg, rgba(34, 197, 94, 0.06), rgba(34, 197, 94, 0.02));
@@ -825,66 +828,50 @@
             font-style: italic;
         }
 
-        .mock-chart {
-            margin-top: 4px;
-            padding: 10px 14px;
+        /* ── P&L Chart (outside phone mock) ── */
+        .pl-chart {
             background: rgba(34, 197, 94, 0.05);
-            border: 1px solid rgba(34, 197, 94, 0.1);
-            border-radius: 12px;
+            border: 1px solid rgba(34, 197, 94, 0.12);
+            border-radius: 14px;
+            padding: 14px 16px;
         }
 
-        .mock-chart-label {
+        .pl-chart-label {
             font-size: 10px;
             color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 6px;
-            letter-spacing: 0.5px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            margin-bottom: 10px;
         }
 
-        .chart-line {
+        .pl-chart-svg {
             width: 100%;
             height: 60px;
             display: block;
         }
 
         .chart-path {
-            stroke-dasharray: 400;
-            stroke-dashoffset: 400;
-            animation: drawLine 2s ease forwards, pulse 3s ease-in-out 2s infinite;
+            stroke-dasharray: 500;
+            stroke-dashoffset: 500;
+            animation: drawLine 2.5s ease forwards;
         }
 
         .chart-area {
             opacity: 0;
-            animation: fadeArea 1s ease 1.5s forwards;
+            animation: fadeArea 1s ease 2s forwards;
         }
 
         .chart-dot {
-            filter: drop-shadow(0 0 4px rgba(34, 197, 94, 0.8));
+            filter: drop-shadow(0 0 5px rgba(34, 197, 94, 0.9));
         }
 
         @keyframes drawLine {
-            to {
-                stroke-dashoffset: 0;
-            }
+            to { stroke-dashoffset: 0; }
         }
 
         @keyframes fadeArea {
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.6;
-            }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -907,7 +894,7 @@
         <div class="hero-orb"></div>
         <div class="hero-badge">
             <span></span>
-            Built for Bharat’s real economy
+            Built for Bharat's real economy
         </div>
         <h1>AI-powered software for <em>small and medium businesses</em> in India</h1>
         <p>Palcon AI builds practical software that solves real operational problems for small and medium businesses in
@@ -948,7 +935,10 @@
             <h2 class="section-title">Apps built for the real world</h2>
             <p class="section-sub">We focus on underserved industries where simple, reliable software can make a
                 measurable difference from day one.</p>
+
             <div class="product-card">
+
+                <!-- ── Left: Product Info ── -->
                 <div class="product-info">
                     <div class="product-tag">🐔 Poultry Farm Management App</div>
                     <h3 class="product-title">
@@ -961,7 +951,7 @@
                         operations.</p>
 
                     <ul class="product-features">
-                        <li>Batch profit & loss tracking</li>
+                        <li>Batch profit &amp; loss tracking</li>
                         <li>Feed stock alerts</li>
                         <li>Live broiler market prices</li>
                         <li>PDF batch statements</li>
@@ -986,18 +976,10 @@
                         </div>
 
                         <div class="coopi-chat">
-                            <div class="coopi-bubble farmer">
-                                Add 5000 PBS feed expense 💬
-                            </div>
-                            <div class="coopi-bubble coopi">
-                                ✅ ₹5,000 feed expense added to C#1AA
-                            </div>
-                            <div class="coopi-bubble farmer">
-                                What's today's broiler price?
-                            </div>
-                            <div class="coopi-bubble coopi">
-                                🐔 Kolkata: ₹127/kg · Tomorrow: ₹140/kg ↑
-                            </div>
+                            <div class="coopi-bubble farmer">Add 5000 PBS feed expense 💬</div>
+                            <div class="coopi-bubble coopi">✅ ₹5,000 feed expense added to C#1AA</div>
+                            <div class="coopi-bubble farmer">What's today's broiler price?</div>
+                            <div class="coopi-bubble coopi">🐔 Kolkata: ₹127/kg · Tomorrow: ₹140/kg ↑</div>
                         </div>
 
                         <div class="coopi-actions">
@@ -1009,17 +991,19 @@
                             <span class="coopi-pill">🩺 Add Mortality</span>
                         </div>
 
-                        <div class="coopi-note">
-                            Available in your language. No learning curve.
-                        </div>
+                        <div class="coopi-note">Available in your language. No learning curve.</div>
                     </div>
                     <!-- ── End Coopi Section ── -->
 
-                    <a href="mailto:support@palconai.com?subject=CoopCash%20Early%20Access" class="btn-primary">Get
-                        Early Access →</a>
+                    <a href="mailto:support@palconai.com?subject=CoopCash%20Early%20Access" class="btn-primary">
+                        Get Early Access →
+                    </a>
                 </div>
 
+                <!-- ── Right: Phone Mock + Chart ── -->
                 <div class="product-visual">
+
+                    <!-- Phone mock -->
                     <div class="phone-mock">
                         <div class="phone-screen">
                             <div class="mock-top">
@@ -1063,7 +1047,7 @@
                             <div class="mock-card">
                                 <div class="mock-row">
                                     <div>
-                                        <div class="mock-label">Estimated P&L</div>
+                                        <div class="mock-label">Estimated P&amp;L</div>
                                         <div class="mock-value">₹48,200</div>
                                     </div>
                                 </div>
@@ -1074,39 +1058,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="mock-chart">
-                                <div class="mock-chart-label">P&L Trend</div>
-                                <svg class="chart-line" viewBox="0 0 240 60" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stop-color="#22C55E" stop-opacity="0.3" />
-                                            <stop offset="100%" stop-color="#22C55E" stop-opacity="0" />
-                                        </linearGradient>
-                                    </defs>
-                                    <!-- Area fill -->
-                                    <path class="chart-area"
-                                        d="M0,45 C20,45 30,15 60,20 C90,25 100,35 120,25 C140,15 150,30 180,20 C210,10 220,25 240,20 L240,60 L0,60 Z"
-                                        fill="url(#chartGrad)" />
-                                    <!-- Line -->
-                                    <path class="chart-path"
-                                        d="M0,45 C20,45 30,15 60,20 C90,25 100,35 120,25 C140,15 150,30 180,20 C210,10 220,25 240,20"
-                                        fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="round" />
-                                    <!-- Animated dot -->
-                                    <circle class="chart-dot" r="3" fill="#22C55E">
-                                        <animateMotion dur="3s" repeatCount="indefinite">
-                                            <mpath href="#chartPathRef" />
-                                        </animateMotion>
-                                    </circle>
-                                    <path id="chartPathRef"
-                                        d="M0,45 C20,45 30,15 60,20 C90,25 100,35 120,25 C140,15 150,30 180,20 C210,10 220,25 240,20"
-                                        fill="none" />
-                                </svg>
-                            </div>
 
-                            <!-- Coopi mini chat in phone mock -->
+                            <!-- Ask Coopi card inside phone -->
                             <div class="mock-card"
                                 style="background: rgba(34,197,94,0.06); border-color: rgba(34,197,94,0.15);">
-                                <div class="mock-label" style="margin-bottom:8px; color: #22C55E; font-weight:700;">
+                                <div class="mock-label"
+                                    style="margin-bottom:8px; color: #22C55E; font-weight:700;">
                                     🤖 Ask Coopi
                                 </div>
                                 <div style="font-size:11px; color:#94A3B8; margin-bottom:6px;">
@@ -1117,12 +1074,44 @@
                                     FCR: 1.82 · Feed used: 4,200kg · Weight: 2,307kg
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
+
+                        </div><!-- /phone-screen -->
+                    </div><!-- /phone-mock -->
+
+                    <!-- ── P&L Trend chart — OUTSIDE phone, fills empty space ── -->
+                    <div class="pl-chart">
+                        <div class="pl-chart-label">📈 P&amp;L Trend</div>
+                        <svg class="pl-chart-svg" viewBox="0 0 300 60" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="plGrad" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#22C55E" stop-opacity="0.35"/>
+                                    <stop offset="100%" stop-color="#22C55E" stop-opacity="0"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Area fill -->
+                            <path class="chart-area"
+                                d="M0,50 C25,50 35,30 60,25 C85,20 95,35 120,28 C145,21 155,32 180,22 C205,12 215,26 240,18 C265,10 275,20 300,15 L300,60 L0,60 Z"
+                                fill="url(#plGrad)"/>
+                            <!-- Line -->
+                            <path class="chart-path"
+                                d="M0,50 C25,50 35,30 60,25 C85,20 95,35 120,28 C145,21 155,32 180,22 C205,12 215,26 240,18 C265,10 275,20 300,15"
+                                fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Animated dot -->
+                            <circle class="chart-dot" r="4" fill="#22C55E">
+                                <animateMotion dur="4s" repeatCount="indefinite">
+                                    <mpath href="#plPathRef"/>
+                                </animateMotion>
+                            </circle>
+                            <path id="plPathRef"
+                                d="M0,50 C25,50 35,30 60,25 C85,20 95,35 120,28 C145,21 155,32 180,22 C205,12 215,26 240,18 C265,10 275,20 300,15"
+                                fill="none"/>
+                        </svg>
+                    </div><!-- /pl-chart -->
+
+                </div><!-- /product-visual -->
+
+            </div><!-- /product-card -->
+        </div><!-- /section-inner -->
     </section>
 
     <section id="about">
@@ -1159,27 +1148,20 @@
     <section class="contact-section" id="contact">
         <div class="section-inner">
             <div class="contact-inner">
-
                 <div class="section-label">Early Access</div>
-
                 <h2 class="section-title">Get CoopCash early access</h2>
-
                 <p style="color: var(--text-muted); font-size: 17px; font-weight: 300;">
                     Be among the first poultry farmers to try CoopCash. Join early access or contact us if you have
                     questions.
                 </p>
-
                 <a href="mailto:support@palconai.com" class="contact-email">
                     📧 support@palconai.com
                 </a>
-
                 <br><br>
-
                 <a href="https://wa.me/918328181468?text=Hello%20Palcon%20AI%20team,%20I%20want%20early%20access%20to%20CoopCash"
                     class="contact-email" target="_blank" rel="noopener noreferrer">
                     💬 Join via WhatsApp
                 </a>
-
             </div>
         </div>
     </section>
@@ -1190,7 +1172,6 @@
             <span class="footer-name">Palcon AI</span>
             <span class="footer-copy">· © 2026 Palcon AI Technologies Private Limited</span>
         </div>
-
         <div class="footer-links">
             <a href="/privacy.html">Privacy Policy</a>
             <a href="/terms.html">Terms of Service</a>
@@ -1199,11 +1180,11 @@
             <a href="mailto:support@palconai.com">support@palconai.com</a>
         </div>
     </footer>
+
     <a href="https://wa.me/918328181468?text=Hello%20Palcon%20AI%20team" class="chat-float" target="_blank"
         rel="noopener noreferrer">
         💬 Chat
     </a>
 
 </body>
-
 </html>
