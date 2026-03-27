@@ -719,6 +719,111 @@
             flex-shrink: 0;
             box-shadow: 0 6px 20px rgba(34, 197, 94, 0.25);
         }
+
+        .coopi-section {
+            margin: 28px 0 32px;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.06), rgba(34, 197, 94, 0.02));
+            border: 1px solid rgba(34, 197, 94, 0.18);
+            border-radius: 18px;
+            padding: 22px;
+        }
+
+        .coopi-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .coopi-avatar {
+            width: 40px;
+            height: 40px;
+            background: rgba(34, 197, 94, 0.12);
+            border: 1px solid rgba(34, 197, 94, 0.25);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .coopi-name {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.3px;
+        }
+
+        .coopi-i {
+            color: #FFA726;
+        }
+
+        .coopi-tagline {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        .coopi-chat {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .coopi-bubble {
+            padding: 9px 13px;
+            border-radius: 12px;
+            font-size: 13px;
+            max-width: 85%;
+            line-height: 1.5;
+        }
+
+        .coopi-bubble.farmer {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .coopi-bubble.coopi {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.18);
+            color: var(--text);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        .coopi-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .coopi-pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            font-size: 12px;
+            font-weight: 500;
+            padding: 5px 12px;
+            border-radius: 999px;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .coopi-pill:hover {
+            border-color: rgba(34, 197, 94, 0.3);
+            color: var(--accent);
+        }
+
+        .coopi-note {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-style: italic;
+        }
     </style>
 </head>
 
@@ -781,7 +886,6 @@
             <h2 class="section-title">Apps built for the real world</h2>
             <p class="section-sub">We focus on underserved industries where simple, reliable software can make a
                 measurable difference from day one.</p>
-
             <div class="product-card">
                 <div class="product-info">
                     <div class="product-tag">🐔 Poultry Farm Management App</div>
@@ -802,6 +906,52 @@
                         <li>Multi-language support</li>
                         <li>Works in low-connectivity areas</li>
                     </ul>
+
+                    <!-- ── Coopi Section ── -->
+                    <div class="coopi-section">
+                        <div class="coopi-header">
+                            <div class="coopi-avatar">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" fill="#22C55E" opacity="0.15" />
+                                    <circle cx="12" cy="12" r="6" fill="#22C55E" opacity="0.3" />
+                                    <circle cx="12" cy="12" r="3" fill="#22C55E" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="coopi-name">Meet Coop<span class="coopi-i">i</span></div>
+                                <div class="coopi-tagline">Your farm assistant — just chat</div>
+                            </div>
+                        </div>
+
+                        <div class="coopi-chat">
+                            <div class="coopi-bubble farmer">
+                                Add 5000 PBS feed expense 💬
+                            </div>
+                            <div class="coopi-bubble coopi">
+                                ✅ ₹5,000 feed expense added to C#1AA
+                            </div>
+                            <div class="coopi-bubble farmer">
+                                What's today's broiler price?
+                            </div>
+                            <div class="coopi-bubble coopi">
+                                🐔 Chittoor: ₹127/kg · Tomorrow: ₹140/kg ↑
+                            </div>
+                        </div>
+
+                        <div class="coopi-actions">
+                            <span class="coopi-pill">➕ Add Expense</span>
+                            <span class="coopi-pill">🐔 Record Sale</span>
+                            <span class="coopi-pill">⚖️ Add Weight</span>
+                            <span class="coopi-pill">📊 Check Prices</span>
+                            <span class="coopi-pill">🏠 Create Batch</span>
+                            <span class="coopi-pill">💀 Add Mortality</span>
+                        </div>
+
+                        <div class="coopi-note">
+                            Available in your language. No learning curve.
+                        </div>
+                    </div>
+                    <!-- ── End Coopi Section ── -->
 
                     <a href="mailto:support@palconai.com?subject=CoopCash%20Early%20Access" class="btn-primary">Get
                         Early Access →</a>
@@ -857,16 +1007,91 @@
                                 </div>
                                 <div class="mock-row">
                                     <div>
-                                        <div class="mock-label">Today’s Market Rate</div>
+                                        <div class="mock-label">Today's Market Rate</div>
                                         <div class="mock-value">₹104/kg</div>
                                     </div>
+                                </div>
+                            </div>
+
+                            <!-- Coopi mini chat in phone mock -->
+                            <div class="mock-card"
+                                style="background: rgba(34,197,94,0.06); border-color: rgba(34,197,94,0.15);">
+                                <div class="mock-label" style="margin-bottom:8px; color: #22C55E; font-weight:700;">
+                                    🤖 Ask Coopi
+                                </div>
+                                <div style="font-size:11px; color:#94A3B8; margin-bottom:6px;">
+                                    "What's my FCR this batch?"
+                                </div>
+                                <div
+                                    style="font-size:11px; color:#F1F5F9; background:rgba(34,197,94,0.1); padding:6px 8px; border-radius:8px;">
+                                    FCR: 1.82 · Feed used: 4,200kg · Weight: 2,307kg
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
+
+            <div class="product-visual">
+                <div class="phone-mock">
+                    <div class="phone-screen">
+                        <div class="mock-top">
+                            <span>CoopCash</span>
+                            <span>Live</span>
+                        </div>
+
+                        <div class="mock-title">Farm Dashboard</div>
+                        <div class="mock-sub">Designed for broiler farm operations</div>
+
+                        <div class="mock-card">
+                            <div class="mock-row">
+                                <div>
+                                    <div class="mock-label">Active Batch</div>
+                                    <div class="mock-value">Batch #24</div>
+                                </div>
+                                <div class="mock-pill">Healthy</div>
+                            </div>
+                            <div class="mock-row">
+                                <div>
+                                    <div class="mock-label">Bird Count</div>
+                                    <div class="mock-value">4,850</div>
+                                </div>
+                                <div>
+                                    <div class="mock-label">Mortality</div>
+                                    <div class="mock-value">1.9%</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mock-card">
+                            <div class="mock-row">
+                                <div>
+                                    <div class="mock-label">Feed Stock</div>
+                                    <div class="mock-value">18 bags left</div>
+                                </div>
+                                <div class="mock-pill">Alert soon</div>
+                            </div>
+                        </div>
+
+                        <div class="mock-card">
+                            <div class="mock-row">
+                                <div>
+                                    <div class="mock-label">Estimated P&L</div>
+                                    <div class="mock-value">₹48,200</div>
+                                </div>
+                            </div>
+                            <div class="mock-row">
+                                <div>
+                                    <div class="mock-label">Today’s Market Rate</div>
+                                    <div class="mock-value">₹104/kg</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         </div>
     </section>
 
