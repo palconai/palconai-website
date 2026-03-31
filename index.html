@@ -10,12 +10,22 @@
         gtag('js', new Date());
         gtag('config', 'G-F1Z9E80459');
     </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Palcon AI — AI-powered software for small and medium businesses in India</title>
+
     <meta name="description"
         content="Palcon AI builds practical software for small and medium businesses in India. Creator of CoopCash, a poultry farm management app for broiler farmers." />
+
+    <!-- ✅ ADD THIS (favicon support) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- ✅ Optional but recommended -->
+    <meta name="theme-color" content="#0B1224">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -867,11 +877,15 @@
         }
 
         @keyframes drawLine {
-            to { stroke-dashoffset: 0; }
+            to {
+                stroke-dashoffset: 0;
+            }
         }
 
         @keyframes fadeArea {
-            to { opacity: 1; }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -1062,8 +1076,7 @@
                             <!-- Ask Coopi card inside phone -->
                             <div class="mock-card"
                                 style="background: rgba(34,197,94,0.06); border-color: rgba(34,197,94,0.15);">
-                                <div class="mock-label"
-                                    style="margin-bottom:8px; color: #22C55E; font-weight:700;">
+                                <div class="mock-label" style="margin-bottom:8px; color: #22C55E; font-weight:700;">
                                     🤖 Ask Coopi
                                 </div>
                                 <div style="font-size:11px; color:#94A3B8; margin-bottom:6px;">
@@ -1084,27 +1097,28 @@
                         <svg class="pl-chart-svg" viewBox="0 0 300 60" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="plGrad" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stop-color="#22C55E" stop-opacity="0.35"/>
-                                    <stop offset="100%" stop-color="#22C55E" stop-opacity="0"/>
+                                    <stop offset="0%" stop-color="#22C55E" stop-opacity="0.35" />
+                                    <stop offset="100%" stop-color="#22C55E" stop-opacity="0" />
                                 </linearGradient>
                             </defs>
                             <!-- Area fill -->
                             <path class="chart-area"
                                 d="M0,50 C25,50 35,30 60,25 C85,20 95,35 120,28 C145,21 155,32 180,22 C205,12 215,26 240,18 C265,10 275,20 300,15 L300,60 L0,60 Z"
-                                fill="url(#plGrad)"/>
+                                fill="url(#plGrad)" />
                             <!-- Line -->
                             <path class="chart-path"
                                 d="M0,50 C25,50 35,30 60,25 C85,20 95,35 120,28 C145,21 155,32 180,22 C205,12 215,26 240,18 C265,10 275,20 300,15"
-                                fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
                             <!-- Animated dot -->
                             <circle class="chart-dot" r="4" fill="#22C55E">
                                 <animateMotion dur="4s" repeatCount="indefinite">
-                                    <mpath href="#plPathRef"/>
+                                    <mpath href="#plPathRef" />
                                 </animateMotion>
                             </circle>
                             <path id="plPathRef"
                                 d="M0,50 C25,50 35,30 60,25 C85,20 95,35 120,28 C145,21 155,32 180,22 C205,12 215,26 240,18 C265,10 275,20 300,15"
-                                fill="none"/>
+                                fill="none" />
                         </svg>
                     </div><!-- /pl-chart -->
 
@@ -1187,4 +1201,5 @@
     </a>
 
 </body>
+
 </html>
