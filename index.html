@@ -1212,13 +1212,16 @@
                                     <stop offset="100%" stop-color="#22C55E" stop-opacity="0.02" />
                                 </linearGradient>
                             </defs>
-                            <path
-                                d="M0,60 L0,50 C25,50 35,30 60,25 C85,20 95,35 120,28 C145,21 155,32 180,22 C205,12 215,26 240,18 C265,10 275,20 300,15 L300,60 Z"
-                                fill="url(#plGrad)" />
-                            <path
+                            <path id="plPathRef" class="chart-path"
                                 d="M0,50 C25,50 35,30 60,25 C85,20 95,35 120,28 C145,21 155,32 180,22 C205,12 215,26 240,18 C265,10 275,20 300,15"
                                 fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
+
+                            <circle class="chart-dot" r="4" fill="#22C55E">
+                                <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
+                                    <mpath href="#plPathRef" />
+                                </animateMotion>
+                            </circle>
                         </svg>
                     </div>
                 </div>
