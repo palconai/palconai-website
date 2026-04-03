@@ -1308,26 +1308,27 @@
         (function () {
             const html = document.documentElement;
             const toggle = document.getElementById('themeToggle');
-            const savedTheme = localStorage.getItem('palcon-theme');
 
-            if (savedTheme === 'light' || savedTheme === 'dark') {
+            const savedTheme = localStorage.getItem('palcon-theme');
+            if (savedTheme) {
                 html.setAttribute('data-theme', savedTheme);
             }
 
-            function updateToggleIcon() {
-                const theme = html.getAttribute('data-theme');
-                toggle.textContent = theme === 'light' ? '🌙' : '☀️';
-                toggle.setAttribute('aria-label', theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+            function updateIcon() {
+                toggle.textContent =
+                    html.getAttribute('data-theme') === 'light' ? '🌙' : '☀️';
             }
 
-            updateToggleIcon();
+            updateIcon();
 
             toggle.addEventListener('click', function () {
                 const current = html.getAttribute('data-theme');
                 const next = current === 'light' ? 'dark' : 'light';
+
                 html.setAttribute('data-theme', next);
                 localStorage.setItem('palcon-theme', next);
-                updateToggleIcon();
+
+                updateIcon();
             });
         })();
     </script>
