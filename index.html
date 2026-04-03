@@ -1309,25 +1309,26 @@
             const html = document.documentElement;
             const toggle = document.getElementById('themeToggle');
 
+            if (!toggle) return;
+
             const savedTheme = localStorage.getItem('palcon-theme');
-            if (savedTheme) {
+            if (savedTheme === 'light' || savedTheme === 'dark') {
                 html.setAttribute('data-theme', savedTheme);
             }
 
             function updateIcon() {
-                toggle.textContent =
-                    html.getAttribute('data-theme') === 'light' ? '🌙' : '☀️';
+                const currentTheme = html.getAttribute('data-theme') || 'dark';
+                toggle.textContent = currentTheme === 'light' ? '🌙' : '☀️';
             }
 
             updateIcon();
 
             toggle.addEventListener('click', function () {
-                const current = html.getAttribute('data-theme');
-                const next = current === 'light' ? 'dark' : 'light';
+                const currentTheme = html.getAttribute('data-theme') || 'dark';
+                const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
 
-                html.setAttribute('data-theme', next);
-                localStorage.setItem('palcon-theme', next);
-
+                html.setAttribute('data-theme', nextTheme);
+                localStorage.setItem('palcon-theme', nextTheme);
                 updateIcon();
             });
         })();
