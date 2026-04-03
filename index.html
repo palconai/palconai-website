@@ -923,6 +923,19 @@
         }
 
         @media (max-width: 768px) {
+            .nav-cta {
+                display: none;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            .nav-link-products {
+                display: inline-block;
+                font-size: 14px;
+            }
+
             nav {
                 padding: 16px 20px;
                 gap: 12px;
@@ -980,8 +993,8 @@
 
         <div class="nav-right">
             <div class="nav-links">
-                <a class="nav-link" href="#products">Products</a>
-                <a class="nav-link" href="#about">Why Us</a>
+                <a class="nav-link nav-link-products" href="#products">Products</a>
+                <a class="nav-link nav-link-why" href="#about">Why Us</a>
             </div>
 
             <a href="mailto:support@palconai.com?subject=CoopCash%20Early%20Access" class="nav-cta">
